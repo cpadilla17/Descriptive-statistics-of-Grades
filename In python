@@ -1,0 +1,54 @@
+How many students are you grading for?21
+>>> count= 0
+>>> Grades=[]
+>>> total= 0
+>>> while True:
+	Grade= int(input("What is the grade of this child?"))
+	count += 1
+	total += Grade
+	Grades.append(Grade)
+	if count == Students:
+		mean = total/count
+		variance= sum([(i-mean)**2 for i in Grades])/(count)
+		standard_deviation= variance**.5
+		print(" your mean is", mean)
+		print("your variance is", variance)
+		print("your standard deviation is", standard_deviation)
+		break
+
+	
+What is the grade of this child?98
+What is the grade of this child?89
+What is the grade of this child?78
+What is the grade of this child?87
+What is the grade of this child?67
+What is the grade of this child?77
+What is the grade of this child?87
+What is the grade of this child?56
+What is the grade of this child?76
+What is the grade of this child?78
+What is the grade of this child?87
+What is the grade of this child?98
+What is the grade of this child?99
+What is the grade of this child?74
+What is the grade of this child?75
+What is the grade of this child?76
+What is the grade of this child?73
+What is the grade of this child?77
+What is the grade of this child?84
+What is the grade of this child?83
+What is the grade of this child?85
+your mean is 81.14285714285714
+your variance is 103.45578231292517
+your standard deviation is 10.171321561769895
+>>> #check your mean, variance and standard deviation with numpy
+>>> import numpy as np
+>>> Var_np= np.var(Grades)
+>>> mean_np= np.mean(Grades)
+>>> std_np= np.std(Grades)
+>>> Var_np
+103.45578231292517
+>>> mean_np
+81.14285714285714
+>>> std_np
+10.171321561769895
